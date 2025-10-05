@@ -67,7 +67,7 @@
         <!-- Page Title Section -->
         <section class="border-b border-white">
             <div class="flex items-center justify-center min-h-[30vh] lg:min-h-[40vh] px-4 text-center">
-                <pre id="ascii-title" class="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-['IBM_Plex_Mono'] leading-tight whitespace-pre text-white"></pre>
+                <pre id="ascii-title" class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-['IBM_Plex_Mono'] leading-tight whitespace-pre text-white"></pre>
             </div>
         </section>
 
@@ -182,13 +182,13 @@
         });
     </script>
     
-    <!-- ASCII Art Animation Script -->
+    <!-- ASCII Art Script -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const asciiElement = document.getElementById('ascii-title');
             if (!asciiElement) return;
 
-            // ASCII art for "CONCEPT"
+            // Simple ASCII art for "CONCEPT"
             const asciiText = `
  ██████╗ ██████╗ ███╗   ██╗ ██████╗███████╗██████╗ ████████╗
 ██╔════╝██╔═══██╗████╗  ██║██╔════╝██╔════╝██╔══██╗╚══██╔══╝
@@ -198,14 +198,7 @@
  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝╚══════╝╚═╝  ╚═╝   ╚═╝   
       `;
 
-            let i = 0;
-            const animationSpeed = 5; // ms per character
-            function animate() {
-                asciiElement.textContent = asciiText.slice(0, i);
-                i++;
-                if (i <= asciiText.length) setTimeout(animate, animationSpeed);
-            }
-            animate();
+            asciiElement.textContent = asciiText;
         });
     </script>
 </body>
