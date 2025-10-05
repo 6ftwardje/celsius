@@ -12,33 +12,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-black text-white font-['Space_Grotesk'] min-h-screen">
-    <!-- Header - Brutalist -->
+    <!-- Header - Responsive Brutalist -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-black border-b border-white">
-        <div class="grid grid-cols-12 h-16">
+        <div class="flex items-center justify-between px-4 lg:px-6 h-16">
             <!-- Logo Section -->
-            <div class="col-span-3 flex items-center pl-6 border-r border-white">
+            <div class="flex items-center">
                 <a href="index.html">
-                    <img src="assets/logo.png" alt="Celsius" class="h-8 w-auto">
+                    <img src="assets/logo.png" alt="Celsius" class="h-6 lg:h-8 w-auto">
                 </a>
             </div>
             
-            <!-- Countdown Timer -->
-            <div class="col-span-3 flex items-center justify-center border-r border-white">
+            <!-- Countdown Timer - Hidden on mobile -->
+            <div class="hidden lg:flex items-center justify-center flex-1">
                 <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 text-center" id="countdown">
                     <div id="countdown-timer">LOADING...</div>
                 </div>
             </div>
             
-            <!-- Navigation -->
-            <div class="col-span-6 flex items-center justify-end pr-6">
-                <nav class="flex space-x-8">
-                    <a href="events.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200 underline">EVENTS</a>
-                    <a href="about.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200">ABOUT</a>
-                    <a href="contact.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200">CONTACT</a>
-                </nav>
-            </div>
+            <!-- Desktop Navigation -->
+            <nav id="desktop-nav" class="hidden lg:flex space-x-8">
+                <a href="events.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200 underline">EVENTS</a>
+                <a href="about.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200">ABOUT</a>
+                <a href="contact.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200">CONTACT</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="lg:hidden flex flex-col space-y-1.5 p-2">
+                <span class="block w-6 h-0.5 bg-white"></span>
+                <span class="block w-6 h-0.5 bg-white"></span>
+                <span class="block w-6 h-0.5 bg-white"></span>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black flex-col items-center justify-center space-y-8 text-2xl font-['IBM_Plex_Mono'] uppercase tracking-wider hidden z-40">
+        <a href="events.html" class="hover:underline transition-opacity duration-200">EVENTS</a>
+        <a href="about.html" class="hover:underline transition-opacity duration-200">ABOUT</a>
+        <a href="contact.html" class="hover:underline transition-opacity duration-200">CONTACT</a>
+        <button id="menu-close" class="absolute top-6 right-6 text-3xl font-light">×</button>
+    </div>
 
     <!-- Marquee -->
     <div class="fixed top-16 left-0 right-0 z-40 bg-black border-b border-white overflow-hidden">
@@ -49,13 +62,13 @@
         </div>
     </div>
 
-    <!-- Main Content - Brutalist Editorial -->
-    <main>
+    <!-- Main Content - Responsive Brutalist Editorial -->
+    <main class="pt-32 pb-20">
         <!-- Page Title Section -->
         <section class="border-b border-white">
-            <div class="grid grid-cols-12 min-h-[40vh]">
-                <div class="col-span-12 flex items-center justify-center">
-                    <h1 class="text-6xl md:text-8xl font-black uppercase tracking-[0.05em] leading-none">
+            <div class="grid grid-cols-12 min-h-[30vh] lg:min-h-[40vh]">
+                <div class="col-span-12 flex items-center justify-center px-4">
+                    <h1 class="text-4xl md:text-6xl lg:text-8xl font-black uppercase tracking-[0.05em] leading-none text-center">
                         UPCOMING EVENTS
                     </h1>
                 </div>
@@ -64,19 +77,19 @@
 
         <!-- Event 1 Section -->
         <section class="border-b border-white">
-            <div class="grid grid-cols-12 min-h-[60vh]">
+            <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[60vh]">
                 <!-- Event Info -->
-                <div class="col-span-6 flex flex-col justify-center pl-6 pr-12 border-r border-white">
-                    <div class="space-y-6">
-                        <h2 class="text-5xl md:text-6xl font-black uppercase tracking-[0.02em] leading-none">
-                            CELSIUS 01
+                <div class="col-span-1 lg:col-span-6 flex flex-col justify-center px-6 lg:pl-6 lg:pr-12 lg:border-r border-white py-8 lg:py-0">
+                    <div class="space-y-4 lg:space-y-6">
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black uppercase tracking-[0.02em] leading-none">
+                            CEL_0001
                         </h2>
-                        <div class="space-y-4">
+                        <div class="space-y-3 lg:space-y-4">
                             <div>
                                 <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
                                     VENUE / DATE / LOCATION
                                 </div>
-                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                <div class="text-sm md:text-base lg:text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
                                     BAR BROOS / 10.10.2025 / OUDE-BEESTENMARKT GHENT
                                 </div>
                             </div>
@@ -84,7 +97,7 @@
                                 <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
                                     TIME / ENTRY
                                 </div>
-                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                <div class="text-sm md:text-base lg:text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
                                     23:00 - 05:00 / FREE ENTRY
                                 </div>
                             </div>
@@ -92,7 +105,7 @@
                                 <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
                                     LINE-UP
                                 </div>
-                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                <div class="text-sm md:text-base lg:text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
                                     BUMI / ILKE B2B MAXIM / MOES
                                 </div>
                             </div>
@@ -100,19 +113,19 @@
                                 <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
                                     GENRE
                                 </div>
-                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                <div class="text-sm md:text-base lg:text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
                                     BOUNCE / TRANCE / HARDGROOVE
                                 </div>
                             </div>
                         </div>
-                        <p class="text-lg font-light leading-relaxed">
+                        <p class="text-sm md:text-base lg:text-lg font-light leading-relaxed">
                             Custom stage with visuals. Immersive techno experience blending sound and visual art.
                         </p>
                     </div>
                 </div>
                 
                 <!-- Event Video -->
-                <div class="col-span-6 flex items-center justify-center">
+                <div class="col-span-1 lg:col-span-6 flex items-center justify-center min-h-[40vh] lg:min-h-full">
                     <video 
                         class="w-full h-full object-cover" 
                         autoplay 
@@ -120,7 +133,7 @@
                         loop 
                         playsinline
                     >
-                        <source src="https://uwhhlxrvyktbohhgwblr.supabase.co/storage/v1/object/sign/celsius-assets/video_gistel_720p.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNWYwNzRiOS1kNjZhLTQ5ZjctODlmZi1mNTYyZjM2Yjc5YWIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZWxzaXVzLWFzc2V0cy92aWRlb19naXN0ZWxfNzIwcC5tcDQiLCJpYXQiOjE3NTk2NzY1ODQsImV4cCI6MTc5MTIxMjU4NH0.M6Mp5yvc91PuQoI0uqnr7-xVaSyJ4pFIkbWwYOJ8XKY" type="video/mp4">
+                        <source src="https://uwhhlxrvyktbohhgwblr.supabase.co/storage/v1/object/sign/celsius-assets/gent_no_borders_720p.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNWYwNzRiOS1kNjZhLTQ5ZjctODlmZi1mNTYyZjM2Yjc5YWIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZWxzaXVzLWFzc2V0cy9nZW50X25vX2JvcmRlcnNfNzIwcC5tcDQiLCJpYXQiOjE3NTk2Nzc1NzksImV4cCI6MTc5MTIxMzU3OX0.HMjqdw3DJOmid6wo70-SuoK_4o0NkWCvPkPhPJ6n6gM" type="video/mp4">
                     </video>
                 </div>
             </div>
@@ -128,9 +141,9 @@
 
         <!-- Event 2 Section -->
         <section class="border-b border-white">
-            <div class="grid grid-cols-12 min-h-[60vh]">
+            <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[60vh]">
                 <!-- Event Video -->
-                <div class="col-span-6 flex items-center justify-center">
+                <div class="col-span-1 lg:col-span-6 flex items-center justify-center min-h-[40vh] lg:min-h-full order-1 lg:order-1">
                     <video 
                         class="w-full h-full object-cover" 
                         autoplay 
@@ -138,22 +151,22 @@
                         loop 
                         playsinline
                     >
-                        <source src="https://uwhhlxrvyktbohhgwblr.supabase.co/storage/v1/object/sign/celsius-assets/video_gistel_720p.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNWYwNzRiOS1kNjZhLTQ5ZjctODlmZi1mNTYyZjM2Yjc5YWIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZWxzaXVzLWFzc2V0cy92aWRlb19naXN0ZWxfNzIwcC5tcDQiLCJpYXQiOjE3NTk2NzY1ODQsImV4cCI6MTc5MTIxMjU4NH0.M6Mp5yvc91PuQoI0uqnr7-xVaSyJ4pFIkbWwYOJ8XKY" type="video/mp4">
+                        <source src="https://uwhhlxrvyktbohhgwblr.supabase.co/storage/v1/object/sign/celsius-assets/video_gistel_no_borders_720p.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNWYwNzRiOS1kNjZhLTQ5ZjctODlmZi1mNTYyZjM2Yjc5YWIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZWxzaXVzLWFzc2V0cy92aWRlb19naXN0ZWxfbm9fYm9yZGVyc183MjBwLm1wNCIsImlhdCI6MTc1OTY3Nzc0MSwiZXhwIjoxNzkxMjEzNzQxfQ.IlbKJAUDNOIjeLKHnF1-t50J-5DYgRGiOd_9ffZJ68k" type="video/mp4">
                     </video>
                 </div>
                 
                 <!-- Event Info -->
-                <div class="col-span-6 flex flex-col justify-center pl-12 pr-6">
-                    <div class="space-y-6">
-                        <h2 class="text-5xl md:text-6xl font-black uppercase tracking-[0.02em] leading-none">
-                            CELSIUS 02
+                <div class="col-span-1 lg:col-span-6 flex flex-col justify-center px-6 lg:pl-12 lg:pr-6 py-8 lg:py-0 order-2 lg:order-2">
+                    <div class="space-y-4 lg:space-y-6">
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black uppercase tracking-[0.02em] leading-none">
+                            CEL_0002
                         </h2>
-                        <div class="space-y-4">
+                        <div class="space-y-3 lg:space-y-4">
                             <div>
                                 <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
                                     VENUE / DATE / LOCATION
                                 </div>
-                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                <div class="text-sm md:text-base lg:text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
                                     CHARLATAN / 27.11.2025 / VRIJDAGSMARKT GHENT
                                 </div>
                             </div>
@@ -161,7 +174,7 @@
                                 <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
                                     TIME / ENTRY
                                 </div>
-                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                <div class="text-sm md:text-base lg:text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
                                     23:00 - 05:00 / 6 EURO TICKETS
                                 </div>
                             </div>
@@ -169,7 +182,7 @@
                                 <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
                                     LINE-UP
                                 </div>
-                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                <div class="text-sm md:text-base lg:text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
                                     WILLYGT B2B MOES / ARTER / L3U / SMXD
                                 </div>
                             </div>
@@ -177,12 +190,12 @@
                                 <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
                                     GENRE
                                 </div>
-                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                <div class="text-sm md:text-base lg:text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
                                     BOUNCE / TRANCE / HARDGROOVE
                                 </div>
                             </div>
                         </div>
-                        <p class="text-lg font-light leading-relaxed">
+                        <p class="text-sm md:text-base lg:text-lg font-light leading-relaxed">
                             Custom stage with visuals. Second chapter of our underground journey.
                         </p>
                     </div>
@@ -192,34 +205,34 @@
 
         <!-- Event 3 Section -->
         <section class="border-b border-white">
-            <div class="grid grid-cols-12 min-h-[60vh]">
+            <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[60vh]">
                 <!-- Event Info -->
-                <div class="col-span-6 flex flex-col justify-center pl-6 pr-12 border-r border-white">
-                    <div class="space-y-6">
-                        <h2 class="text-5xl md:text-6xl font-black uppercase tracking-[0.02em] leading-none">
-                            CELSIUS 03
+                <div class="col-span-1 lg:col-span-6 flex flex-col justify-center px-6 lg:pl-6 lg:pr-12 lg:border-r border-white py-8 lg:py-0">
+                    <div class="space-y-4 lg:space-y-6">
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black uppercase tracking-[0.02em] leading-none">
+                            CEL_0003
                         </h2>
-                        <div class="space-y-4">
+                        <div class="space-y-3 lg:space-y-4">
                             <div>
                                 <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
                                     VENUE / DATE / LOCATION
                                 </div>
-                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                <div class="text-sm md:text-base lg:text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
                                     CHARLATAN / 11.02.2025 / VRIJDAGSMARKT GHENT
                                 </div>
                             </div>
                         </div>
-                        <p class="text-lg font-light leading-relaxed">
+                        <p class="text-sm md:text-base lg:text-lg font-light leading-relaxed">
                             To be further announced. Stay tuned for more details.
                         </p>
                     </div>
                 </div>
                 
                 <!-- Placeholder for Event 3 -->
-                <div class="col-span-6 flex items-center justify-center bg-gray-900">
+                <div class="col-span-1 lg:col-span-6 flex items-center justify-center bg-gray-900 min-h-[40vh] lg:min-h-full">
                     <div class="text-center">
-                        <div class="text-4xl font-black uppercase text-white opacity-50">TBA</div>
-                        <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider text-white opacity-30 mt-4">
+                        <div class="text-2xl md:text-3xl lg:text-4xl font-black uppercase text-white opacity-50">TBA</div>
+                        <div class="text-sm md:text-base lg:text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider text-white opacity-30 mt-4">
                             TO BE ANNOUNCED
                         </div>
                     </div>
@@ -228,21 +241,21 @@
         </section>
     </main>
 
-    <!-- Footer - Brutalist -->
+    <!-- Footer - Responsive Brutalist -->
     <footer class="w-full border-t border-white bg-black fixed bottom-0 left-0 right-0 z-50">
-        <div class="grid grid-cols-3 md:grid-cols-12 h-20 text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider">
+        <div class="flex flex-col lg:grid lg:grid-cols-12 h-auto lg:h-20 text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider">
             <!-- Left: Logo + Copyright -->
-            <div class="col-span-3 md:col-span-4 flex items-center pl-6 border-r border-white">
+            <div class="flex items-center justify-center lg:justify-start px-6 py-4 lg:py-0 lg:col-span-4 border-b lg:border-b-0 lg:border-r border-white">
                 <p class="opacity-60">© 2025 CELSIUS</p>
             </div>
 
             <!-- Center: Tagline -->
-            <div class="col-span-3 md:col-span-4 flex items-center justify-center border-r border-white">
-                <p class="font-['IBM_Plex_Mono'] text-sm md:text-base font-mono">heat.turned.up</p>
+            <div class="flex items-center justify-center px-6 py-4 lg:py-0 lg:col-span-4 border-b lg:border-b-0 lg:border-r border-white">
+                <p class="font-['IBM_Plex_Mono'] text-sm lg:text-base font-mono">heat.turned.up</p>
             </div>
 
             <!-- Right: Social Links -->
-            <div class="col-span-6 md:col-span-4 flex items-center justify-end pr-6 space-x-4">
+            <div class="flex items-center justify-center lg:justify-end px-6 py-4 lg:py-0 lg:col-span-4 space-x-4">
                 <a href="https://instagram.com/celsius.events" target="_blank" class="opacity-70 hover:opacity-100">INSTAGRAM</a>
                 <span>/</span>
                 <a href="https://tiktok.com/@celsius.events" target="_blank" class="opacity-70 hover:opacity-100">TIKTOK</a>
@@ -256,5 +269,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="main.js"></script>
+    
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuClose = document.getElementById('menu-close');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
+
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+        });
+
+        // Close menu when clicking on links
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+    </script>
 </body>
 </html>

@@ -175,18 +175,10 @@ footer * {
 }
 
 /* Mobile optimizations */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .marquee-text {
         font-size: 0.75rem;
         animation-duration: 15s;
-    }
-    
-    .nav-links {
-        gap: 1.5rem;
-    }
-    
-    .nav-links a {
-        font-size: 0.75rem;
     }
     
     /* Mobile grid adjustments */
@@ -200,6 +192,66 @@ footer * {
     
     .border-b {
         border-bottom: 1px solid #fff;
+    }
+    
+    /* Mobile video adjustments */
+    video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* Mobile typography adjustments */
+    .text-6xl {
+        font-size: 2.5rem;
+    }
+    
+    .text-8xl {
+        font-size: 3.5rem;
+    }
+    
+    /* Mobile spacing adjustments */
+    .space-y-8 > * + * {
+        margin-top: 1.5rem;
+    }
+    
+    .space-y-6 > * + * {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .marquee-text {
+        font-size: 0.7rem;
+        animation-duration: 12s;
+    }
+    
+    /* Smaller mobile adjustments */
+    .text-4xl {
+        font-size: 2rem;
+    }
+    
+    .text-5xl {
+        font-size: 2.25rem;
+    }
+    
+    .text-6xl {
+        font-size: 2.5rem;
+    }
+    
+    .text-8xl {
+        font-size: 3rem;
+    }
+    
+    /* Mobile padding adjustments */
+    .px-6 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .py-8 {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
     }
 }
 
@@ -219,6 +271,51 @@ video::-webkit-media-controls-enclosure {
 /* Ensure proper video aspect ratios */
 video {
     object-fit: cover;
+}
+
+/* Mobile menu styles */
+#mobile-menu {
+    transition: opacity 0.3s ease-in-out;
+}
+
+#mobile-menu.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#mobile-menu.flex {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Mobile hamburger menu animation */
+#menu-toggle span {
+    transition: all 0.3s ease;
+}
+
+#menu-toggle:hover span {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Mobile video container adjustments */
+@media (max-width: 1024px) {
+    .min-h-\[40vh\] {
+        min-height: 30vh;
+    }
+    
+    .min-h-\[60vh\] {
+        min-height: 50vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .min-h-\[40vh\] {
+        min-height: 25vh;
+    }
+    
+    .min-h-\[60vh\] {
+        min-height: 40vh;
+    }
 }
 
 /* Focus states for accessibility */

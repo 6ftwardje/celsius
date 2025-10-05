@@ -12,33 +12,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-black text-white font-['Space_Grotesk'] min-h-screen">
-    <!-- Header - Brutalist -->
+    <!-- Header - Responsive Brutalist -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-black border-b border-white">
-        <div class="grid grid-cols-12 h-16">
+        <div class="flex items-center justify-between px-4 lg:px-6 h-16">
             <!-- Logo Section -->
-            <div class="col-span-3 flex items-center pl-6 border-r border-white">
+            <div class="flex items-center">
                 <a href="index.html">
-                    <img src="assets/logo.png" alt="Celsius" class="h-8 w-auto">
+                    <img src="assets/logo.png" alt="Celsius" class="h-6 lg:h-8 w-auto">
                 </a>
             </div>
             
-            <!-- Countdown Timer -->
-            <div class="col-span-3 flex items-center justify-center border-r border-white">
+            <!-- Countdown Timer - Hidden on mobile -->
+            <div class="hidden lg:flex items-center justify-center flex-1">
                 <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 text-center" id="countdown">
                     <div id="countdown-timer">LOADING...</div>
                 </div>
             </div>
             
-            <!-- Navigation -->
-            <div class="col-span-6 flex items-center justify-end pr-6">
-                <nav class="flex space-x-8">
-                    <a href="events.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200">EVENTS</a>
-                    <a href="about.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200">ABOUT</a>
-                    <a href="contact.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200 underline">CONTACT</a>
-                </nav>
-            </div>
+            <!-- Desktop Navigation -->
+            <nav id="desktop-nav" class="hidden lg:flex space-x-8">
+                <a href="events.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200">EVENTS</a>
+                <a href="about.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200">ABOUT</a>
+                <a href="contact.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200 underline">CONTACT</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="lg:hidden flex flex-col space-y-1.5 p-2">
+                <span class="block w-6 h-0.5 bg-white"></span>
+                <span class="block w-6 h-0.5 bg-white"></span>
+                <span class="block w-6 h-0.5 bg-white"></span>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black flex-col items-center justify-center space-y-8 text-2xl font-['IBM_Plex_Mono'] uppercase tracking-wider hidden z-40">
+        <a href="events.html" class="hover:underline transition-opacity duration-200">EVENTS</a>
+        <a href="about.html" class="hover:underline transition-opacity duration-200">ABOUT</a>
+        <a href="contact.html" class="hover:underline transition-opacity duration-200">CONTACT</a>
+        <button id="menu-close" class="absolute top-6 right-6 text-3xl font-light">×</button>
+    </div>
 
     <!-- Marquee -->
     <div class="fixed top-16 left-0 right-0 z-40 bg-black border-b border-white overflow-hidden">
@@ -49,13 +62,13 @@
         </div>
     </div>
 
-    <!-- Main Content - Brutalist Editorial -->
-    <main>
+    <!-- Main Content - Responsive Brutalist Editorial -->
+    <main class="pt-32 pb-20">
         <!-- Page Title Section -->
         <section class="border-b border-white">
-            <div class="grid grid-cols-12 min-h-[40vh]">
-                <div class="col-span-12 flex items-center justify-center">
-                    <h1 class="text-6xl md:text-8xl font-black uppercase tracking-[0.05em] leading-none">
+            <div class="grid grid-cols-12 min-h-[30vh] lg:min-h-[40vh]">
+                <div class="col-span-12 flex items-center justify-center px-4">
+                    <h1 class="text-4xl md:text-6xl lg:text-8xl font-black uppercase tracking-[0.05em] leading-none text-center">
                         CONNECT
                     </h1>
                 </div>
@@ -64,23 +77,23 @@
 
         <!-- Contact Links Section -->
         <section class="border-b border-white">
-            <div class="grid grid-cols-12 min-h-[60vh]">
+            <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[60vh]">
                 <!-- Contact Info -->
-                <div class="col-span-6 flex flex-col justify-center pl-6 pr-12 border-r border-white">
-                    <div class="space-y-8">
+                <div class="col-span-1 lg:col-span-6 flex flex-col justify-center px-6 lg:pl-6 lg:pr-12 lg:border-r border-white py-8 lg:py-0">
+                    <div class="space-y-6 lg:space-y-8">
                         <!-- Instagram -->
                         <div class="group cursor-pointer">
                             <a href="https://instagram.com/celsius.events" target="_blank" class="block">
                                 <div class="flex items-center justify-between py-4">
-                                    <div>
+                                    <div class="flex-1">
                                         <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
                                             SOCIAL / INSTAGRAM
                                         </div>
-                                        <div class="text-2xl font-black uppercase tracking-wider">
+                                        <div class="text-lg md:text-xl lg:text-2xl font-black uppercase tracking-wider">
                                             @CELSIUS.EVENTS
                                         </div>
                                     </div>
-                                    <div class="text-2xl font-black group-hover:translate-x-2 transition-transform duration-200">
+                                    <div class="text-xl md:text-2xl font-black group-hover:translate-x-2 transition-transform duration-200 ml-4">
                                         →
                                     </div>
                                 </div>
@@ -91,15 +104,15 @@
                         <div class="group cursor-pointer">
                             <a href="https://tiktok.com/@celsius.events" target="_blank" class="block">
                                 <div class="flex items-center justify-between py-4">
-                                    <div>
+                                    <div class="flex-1">
                                         <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
                                             SOCIAL / TIKTOK
                                         </div>
-                                        <div class="text-2xl font-black uppercase tracking-wider">
+                                        <div class="text-lg md:text-xl lg:text-2xl font-black uppercase tracking-wider">
                                             @CELSIUS.EVENTS
                                         </div>
                                     </div>
-                                    <div class="text-2xl font-black group-hover:translate-x-2 transition-transform duration-200">
+                                    <div class="text-xl md:text-2xl font-black group-hover:translate-x-2 transition-transform duration-200 ml-4">
                                         →
                                     </div>
                                 </div>
@@ -110,15 +123,15 @@
                         <div class="group cursor-pointer">
                             <a href="mailto:info@celsius.events" class="block">
                                 <div class="flex items-center justify-between py-4">
-                                    <div>
+                                    <div class="flex-1">
                                         <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
                                             CONTACT / EMAIL
                                         </div>
-                                        <div class="text-2xl font-black uppercase tracking-wider">
+                                        <div class="text-lg md:text-xl lg:text-2xl font-black uppercase tracking-wider">
                                             INFO@CELSIUS.EVENTS
                                         </div>
                                     </div>
-                                    <div class="text-2xl font-black group-hover:translate-x-2 transition-transform duration-200">
+                                    <div class="text-xl md:text-2xl font-black group-hover:translate-x-2 transition-transform duration-200 ml-4">
                                         →
                                     </div>
                                 </div>
@@ -128,7 +141,7 @@
                 </div>
                 
                 <!-- Handshake Video -->
-                <div class="col-span-6 flex items-center justify-center">
+                <div class="col-span-1 lg:col-span-6 flex items-center justify-center min-h-[40vh] lg:min-h-full">
                     <video 
                         class="w-full h-full object-cover" 
                         autoplay 
@@ -143,21 +156,21 @@
         </section>
     </main>
 
-    <!-- Footer - Brutalist -->
+    <!-- Footer - Responsive Brutalist -->
     <footer class="w-full border-t border-white bg-black fixed bottom-0 left-0 right-0 z-50">
-        <div class="grid grid-cols-3 md:grid-cols-12 h-20 text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider">
+        <div class="flex flex-col lg:grid lg:grid-cols-12 h-auto lg:h-20 text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider">
             <!-- Left: Logo + Copyright -->
-            <div class="col-span-3 md:col-span-4 flex items-center pl-6 border-r border-white">
+            <div class="flex items-center justify-center lg:justify-start px-6 py-4 lg:py-0 lg:col-span-4 border-b lg:border-b-0 lg:border-r border-white">
                 <p class="opacity-60">© 2025 CELSIUS</p>
             </div>
 
             <!-- Center: Tagline -->
-            <div class="col-span-3 md:col-span-4 flex items-center justify-center border-r border-white">
-                <p class="font-['IBM_Plex_Mono'] text-sm md:text-base font-mono">heat.turned.up</p>
+            <div class="flex items-center justify-center px-6 py-4 lg:py-0 lg:col-span-4 border-b lg:border-b-0 lg:border-r border-white">
+                <p class="font-['IBM_Plex_Mono'] text-sm lg:text-base font-mono">heat.turned.up</p>
             </div>
 
             <!-- Right: Social Links -->
-            <div class="col-span-6 md:col-span-4 flex items-center justify-end pr-6 space-x-4">
+            <div class="flex items-center justify-center lg:justify-end px-6 py-4 lg:py-0 lg:col-span-4 space-x-4">
                 <a href="https://instagram.com/celsius.events" target="_blank" class="opacity-70 hover:opacity-100">INSTAGRAM</a>
                 <span>/</span>
                 <a href="https://tiktok.com/@celsius.events" target="_blank" class="opacity-70 hover:opacity-100">TIKTOK</a>
@@ -171,5 +184,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="main.js"></script>
+    
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuClose = document.getElementById('menu-close');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
+
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+        });
+
+        // Close menu when clicking on links
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+    </script>
 </body>
 </html>
