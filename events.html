@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Celsius</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-white font-['Space_Grotesk'] min-h-screen">
+    <!-- Header - Brutalist -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black border-b border-white">
+        <div class="grid grid-cols-12 h-16">
+            <!-- Logo Section -->
+            <div class="col-span-3 flex items-center pl-6 border-r border-white">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="Celsius" class="h-8 w-auto">
+                </a>
+            </div>
+            
+            <!-- Countdown Timer -->
+            <div class="col-span-3 flex items-center justify-center border-r border-white">
+                <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 text-center" id="countdown">
+                    <div id="countdown-timer">LOADING...</div>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <div class="col-span-6 flex items-center justify-end pr-6">
+                <nav class="flex space-x-8">
+                    <a href="events.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200 underline">EVENTS</a>
+                    <a href="about.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200">ABOUT</a>
+                    <a href="contact.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200">CONTACT</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Marquee -->
+    <div class="fixed top-16 left-0 right-0 z-40 bg-black border-b border-white overflow-hidden">
+        <div class="marquee-container">
+            <div class="marquee-text text-xs font-['IBM_Plex_Mono'] uppercase tracking-[0.3em] whitespace-nowrap">
+                CELSIUS 01 / BAR BROOS / OUDE-BEESTENMARKT / GHENT / 10.10.2025 / 23:00-05:00 / FREE ENTRY / BUMI / ILKE B2B MAXIM / MOES / CELSIUS 01 / BAR BROOS / OUDE-BEESTENMARKT / GHENT / 10.10.2025 / 23:00-05:00 / FREE ENTRY / BUMI / ILKE B2B MAXIM / MOES /
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content - Brutalist Editorial -->
+    <main>
+        <!-- Page Title Section -->
+        <section class="border-b border-white">
+            <div class="grid grid-cols-12 min-h-[40vh]">
+                <div class="col-span-12 flex items-center justify-center">
+                    <h1 class="text-6xl md:text-8xl font-black uppercase tracking-[0.05em] leading-none">
+                        UPCOMING EVENTS
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event 1 Section -->
+        <section class="border-b border-white">
+            <div class="grid grid-cols-12 min-h-[60vh]">
+                <!-- Event Info -->
+                <div class="col-span-6 flex flex-col justify-center pl-6 pr-12 border-r border-white">
+                    <div class="space-y-6">
+                        <h2 class="text-5xl md:text-6xl font-black uppercase tracking-[0.02em] leading-none">
+                            CELSIUS 01
+                        </h2>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
+                                    VENUE / DATE / LOCATION
+                                </div>
+                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                    BAR BROOS / 10.10.2025 / OUDE-BEESTENMARKT GHENT
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
+                                    TIME / ENTRY
+                                </div>
+                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                    23:00 - 05:00 / FREE ENTRY
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
+                                    LINE-UP
+                                </div>
+                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                    BUMI / ILKE B2B MAXIM / MOES
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
+                                    GENRE
+                                </div>
+                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                    BOUNCE / TRANCE / HARDGROOVE
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-lg font-light leading-relaxed">
+                            Custom stage with visuals. Immersive techno experience blending sound and visual art.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Event Video -->
+                <div class="col-span-6 flex items-center justify-center">
+                    <video 
+                        class="w-full h-full object-cover" 
+                        autoplay 
+                        muted 
+                        loop 
+                        playsinline
+                    >
+                        <source src="https://uwhhlxrvyktbohhgwblr.supabase.co/storage/v1/object/sign/celsius-assets/video_gistel_720p.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNWYwNzRiOS1kNjZhLTQ5ZjctODlmZi1mNTYyZjM2Yjc5YWIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZWxzaXVzLWFzc2V0cy92aWRlb19naXN0ZWxfNzIwcC5tcDQiLCJpYXQiOjE3NTk2NzY1ODQsImV4cCI6MTc5MTIxMjU4NH0.M6Mp5yvc91PuQoI0uqnr7-xVaSyJ4pFIkbWwYOJ8XKY" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event 2 Section -->
+        <section class="border-b border-white">
+            <div class="grid grid-cols-12 min-h-[60vh]">
+                <!-- Event Video -->
+                <div class="col-span-6 flex items-center justify-center">
+                    <video 
+                        class="w-full h-full object-cover" 
+                        autoplay 
+                        muted 
+                        loop 
+                        playsinline
+                    >
+                        <source src="https://uwhhlxrvyktbohhgwblr.supabase.co/storage/v1/object/sign/celsius-assets/video_gistel_720p.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNWYwNzRiOS1kNjZhLTQ5ZjctODlmZi1mNTYyZjM2Yjc5YWIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZWxzaXVzLWFzc2V0cy92aWRlb19naXN0ZWxfNzIwcC5tcDQiLCJpYXQiOjE3NTk2NzY1ODQsImV4cCI6MTc5MTIxMjU4NH0.M6Mp5yvc91PuQoI0uqnr7-xVaSyJ4pFIkbWwYOJ8XKY" type="video/mp4">
+                    </video>
+                </div>
+                
+                <!-- Event Info -->
+                <div class="col-span-6 flex flex-col justify-center pl-12 pr-6">
+                    <div class="space-y-6">
+                        <h2 class="text-5xl md:text-6xl font-black uppercase tracking-[0.02em] leading-none">
+                            CELSIUS 02
+                        </h2>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
+                                    VENUE / DATE / LOCATION
+                                </div>
+                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                    CHARLATAN / 27.11.2025 / VRIJDAGSMARKT GHENT
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
+                                    TIME / ENTRY
+                                </div>
+                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                    23:00 - 05:00 / 6 EURO TICKETS
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
+                                    LINE-UP
+                                </div>
+                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                    WILLYGT B2B MOES / ARTER / L3U / SMXD
+                                </div>
+                            </div>
+                            <div>
+                                <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
+                                    GENRE
+                                </div>
+                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                    BOUNCE / TRANCE / HARDGROOVE
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-lg font-light leading-relaxed">
+                            Custom stage with visuals. Second chapter of our underground journey.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event 3 Section -->
+        <section class="border-b border-white">
+            <div class="grid grid-cols-12 min-h-[60vh]">
+                <!-- Event Info -->
+                <div class="col-span-6 flex flex-col justify-center pl-6 pr-12 border-r border-white">
+                    <div class="space-y-6">
+                        <h2 class="text-5xl md:text-6xl font-black uppercase tracking-[0.02em] leading-none">
+                            CELSIUS 03
+                        </h2>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 mb-2">
+                                    VENUE / DATE / LOCATION
+                                </div>
+                                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider">
+                                    CHARLATAN / 11.02.2025 / VRIJDAGSMARKT GHENT
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-lg font-light leading-relaxed">
+                            To be further announced. Stay tuned for more details.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Placeholder for Event 3 -->
+                <div class="col-span-6 flex items-center justify-center bg-gray-900">
+                    <div class="text-center">
+                        <div class="text-4xl font-black uppercase text-white opacity-50">TBA</div>
+                        <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider text-white opacity-30 mt-4">
+                            TO BE ANNOUNCED
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer - Brutalist -->
+    <footer class="w-full border-t border-white bg-black fixed bottom-0 left-0 right-0 z-50">
+        <div class="grid grid-cols-3 md:grid-cols-12 h-20 text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider">
+            <!-- Left: Logo + Copyright -->
+            <div class="col-span-3 md:col-span-4 flex items-center pl-6 border-r border-white">
+                <p class="opacity-60">© 2025 CELSIUS</p>
+            </div>
+
+            <!-- Center: Tagline -->
+            <div class="col-span-3 md:col-span-4 flex items-center justify-center border-r border-white">
+                <p class="font-['IBM_Plex_Mono'] text-sm md:text-base font-mono">heat.turned.up</p>
+            </div>
+
+            <!-- Right: Social Links -->
+            <div class="col-span-6 md:col-span-4 flex items-center justify-end pr-6 space-x-4">
+                <a href="https://instagram.com/celsius.events" target="_blank" class="opacity-70 hover:opacity-100">INSTAGRAM</a>
+                <span>/</span>
+                <a href="https://tiktok.com/@celsius.events" target="_blank" class="opacity-70 hover:opacity-100">TIKTOK</a>
+                <span>/</span>
+                <a href="mailto:info@celsius.events" class="opacity-70 hover:opacity-100">EMAIL</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

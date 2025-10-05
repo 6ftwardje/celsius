@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celsius - Techno. Art. Night.</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-white font-['Space_Grotesk'] min-h-screen">
+    <!-- Header - Brutalist -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black border-b border-white">
+        <div class="grid grid-cols-12 h-16">
+            <!-- Logo Section -->
+            <div class="col-span-3 flex items-center pl-6 border-r border-white">
+                <img src="assets/logo.png" alt="Celsius" class="h-8 w-auto">
+            </div>
+            
+            <!-- Countdown Timer -->
+            <div class="col-span-3 flex items-center justify-center border-r border-white">
+                <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 text-center" id="countdown">
+                    <div id="countdown-timer">LOADING...</div>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <div class="col-span-6 flex items-center justify-end pr-6">
+                <nav class="flex space-x-8">
+                    <a href="events.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200">EVENTS</a>
+                    <a href="about.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200">ABOUT</a>
+                    <a href="contact.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200">CONTACT</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Marquee -->
+    <div class="fixed top-16 left-0 right-0 z-40 bg-black border-b border-white overflow-hidden">
+        <div class="marquee-container">
+            <div class="marquee-text text-xs font-['IBM_Plex_Mono'] uppercase tracking-[0.3em] whitespace-nowrap">
+                CELSIUS 01 / BAR BROOS / OUDE-BEESTENMARKT / GHENT / 10.10.2025 / 23:00-05:00 / FREE ENTRY / BUMI / ILKE B2B MAXIM / MOES / CELSIUS 01 / BAR BROOS / OUDE-BEESTENMARKT / GHENT / 10.10.2025 / 23:00-05:00 / FREE ENTRY / BUMI / ILKE B2B MAXIM / MOES /
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content - Fullscreen Background -->
+    <main class="relative w-full h-screen overflow-hidden index-main">
+        <!-- Placeholder Background Image -->
+        <div class="absolute top-0 left-0 w-full h-full bg-gray-900 z-0 flex items-center justify-center">
+            <div class="text-center">
+                <div class="text-6xl font-black uppercase text-white opacity-50">PLACEHOLDER</div>
+                <div class="text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider text-white opacity-30 mt-4">
+                    Background Image
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer - Brutalist -->
+    <footer class="w-full border-t border-white bg-black fixed bottom-0 left-0 right-0 z-50">
+        <div class="grid grid-cols-3 md:grid-cols-12 h-20 text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider">
+            <!-- Left: Logo + Copyright -->
+            <div class="col-span-3 md:col-span-4 flex items-center pl-6 border-r border-white">
+                <p class="opacity-60">© 2025 CELSIUS</p>
+            </div>
+
+            <!-- Center: Tagline -->
+            <div class="col-span-3 md:col-span-4 flex items-center justify-center border-r border-white">
+                <p class="font-['IBM_Plex_Mono'] text-sm md:text-base font-mono">heat.turned.up</p>
+            </div>
+
+            <!-- Right: Social Links -->
+            <div class="col-span-6 md:col-span-4 flex items-center justify-end pr-6 space-x-4">
+                <a href="https://instagram.com/celsius.events" target="_blank" class="opacity-70 hover:opacity-100">INSTAGRAM</a>
+                <span>/</span>
+                <a href="https://tiktok.com/@celsius.events" target="_blank" class="opacity-70 hover:opacity-100">TIKTOK</a>
+                <span>/</span>
+                <a href="mailto:info@celsius.events" class="opacity-70 hover:opacity-100">EMAIL</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

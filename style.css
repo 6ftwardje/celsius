@@ -1,0 +1,305 @@
+/* Brutalist styles for Celsius website */
+
+/* Tailwind CSS overrides */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Reset all default margins and padding */
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Fullscreen video styling */
+
+/* Fullscreen background styling - only for index page */
+.index-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+/* Ensure footer is visible and properly positioned */
+footer {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 50 !important;
+    height: 5rem; /* 20 * 0.25rem = 5rem for h-20 */
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+/* Ensure all footer content is visible */
+footer * {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Footer responsive adjustments */
+@media (max-width: 768px) {
+    footer .grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    footer .col-span-3,
+    footer .col-span-6 {
+        grid-column: span 1;
+        border-right: none;
+        border-bottom: 1px solid #fff;
+        padding: 0.75rem 1.5rem;
+        text-align: center;
+    }
+    
+    footer .col-span-3:last-child,
+    footer .col-span-6:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Ensure no margins or padding on html and body */
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff;
+    opacity: 0.3;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+    opacity: 0.6;
+}
+
+/* Marquee animation */
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-text {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    padding: 12px 0;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Hover effects - SIMPLIFIED */
+.event-media video,
+.about-video video {
+    /* No transitions */
+}
+
+.event-media:hover video,
+.about-video:hover video {
+    /* No hover effects */
+}
+
+/* Logo hover effect - DISABLED */
+.logo-container img {
+    /* No transitions */
+}
+
+.logo-container:hover img {
+    /* No hover effects */
+}
+
+/* Navigation link hover effects - SIMPLIFIED */
+.nav-links a {
+    position: relative;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* Contact link hover effects - DISABLED */
+.contact-item:hover {
+    /* No hover effects */
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .marquee-text {
+        font-size: 0.75rem;
+        animation-duration: 15s;
+    }
+    
+    .nav-links {
+        gap: 1.5rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.75rem;
+    }
+    
+    /* Mobile grid adjustments */
+    .grid-cols-12 > * {
+        grid-column: span 12;
+    }
+    
+    .border-r {
+        border-right: none;
+    }
+    
+    .border-b {
+        border-bottom: 1px solid #fff;
+    }
+}
+
+/* Video loading states */
+video {
+    background: #000;
+}
+
+video::-webkit-media-controls {
+    display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+    display: none !important;
+}
+
+/* Ensure proper video aspect ratios */
+video {
+    object-fit: cover;
+}
+
+/* Focus states for accessibility */
+a:focus,
+button:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* Custom utility classes */
+.text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.backdrop-blur-custom {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Brutalist grid lines */
+.border-white {
+    border-color: #fff;
+}
+
+/* Typography hierarchy */
+.font-['IBM_Plex_Mono'] {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.font-['Space_Grotesk'] {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Smooth transitions for brutalist elements - DISABLED */
+.transition-all {
+    /* No transitions */
+}
+
+.transition-transform {
+    /* No transitions */
+}
+
+.transition-opacity {
+    /* No transitions */
+}
+
+/* Hover effects for brutalist design - DISABLED */
+.group:hover .group-hover\:translate-x-2 {
+    /* No hover effects */
+}
+
+.group:hover .group-hover\:opacity-100 {
+    /* No hover effects */
+}
+
+/* Ensure proper spacing for brutalist layout */
+.min-h-\[40vh\] {
+    min-height: 40vh;
+}
+
+.min-h-\[60vh\] {
+    min-height: 60vh;
+}
+
+.min-h-\[80vh\] {
+    min-height: 80vh;
+}
+
+/* Brutalist section dividers */
+section {
+    position: relative;
+}
+
+/* Brutalist text styling */
+.uppercase {
+    text-transform: uppercase;
+}
+
+.tracking-wider {
+    letter-spacing: 0.05em;
+}
+
+.tracking-\[0\.02em\] {
+    letter-spacing: 0.02em;
+}
+
+.tracking-\[0\.05em\] {
+    letter-spacing: 0.05em;
+}
+
+.tracking-\[0\.3em\] {
+    letter-spacing: 0.3em;
+}
