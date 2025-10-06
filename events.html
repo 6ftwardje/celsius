@@ -18,7 +18,7 @@
             <!-- Logo Section -->
             <div class="flex items-center">
                 <a href="index.html">
-                    <img src="assets/logo.png" alt="Celsius" class="h-8 lg:h-12 w-auto">
+                    <img src="assets/logo.png" alt="Celsius" class="h-6 lg:h-8 w-auto">
                 </a>
             </div>
             
@@ -54,9 +54,9 @@
     </div>
 
     <!-- Marquee -->
-    <div class="fixed top-16 left-0 right-0 z-40 bg-black border-b border-white overflow-hidden">
+    <div id="marquee-bar" class="fixed top-16 left-0 right-0 z-[60] bg-black border-t border-b border-white overflow-hidden transition-all duration-300 cursor-pointer" onclick="window.location.href='events.html'" onmouseover="this.style.backgroundColor='white'; this.querySelector('.marquee-text').style.color='black';" onmouseout="this.style.backgroundColor='black'; this.querySelector('.marquee-text').style.color='white';">
         <div class="marquee-container">
-            <div class="marquee-text text-xs font-['IBM_Plex_Mono'] uppercase tracking-[0.3em] whitespace-nowrap">
+            <div class="marquee-text text-xs font-['IBM_Plex_Mono'] uppercase tracking-[0.3em] whitespace-nowrap text-white">
                 CELSIUS 01 / BAR BROOS / OUDE-BEESTENMARKT / GHENT / 10.10.2025 / 23:00-05:00 / FREE ENTRY / BUMI / ILKE B2B MAXIM / MOES / CELSIUS 01 / BAR BROOS / OUDE-BEESTENMARKT / GHENT / 10.10.2025 / 23:00-05:00 / FREE ENTRY / BUMI / ILKE B2B MAXIM / MOES /
             </div>
         </div>
@@ -66,17 +66,13 @@
     <main class="pt-32 pb-20">
         <!-- Page Title Section -->
         <section class="border-b border-white">
-            <div class="grid grid-cols-12 min-h-[30vh] lg:min-h-[40vh]">
-                <div class="col-span-12 flex items-center justify-center px-4">
-                    <h1 class="text-6xl md:text-8xl lg:text-9xl xl:text-[12rem] font-black uppercase tracking-[0.05em] leading-none text-center">
-                        UPCOMING EVENTS
-                    </h1>
-                </div>
+            <div class="flex items-center justify-center min-h-[30vh] lg:min-h-[40vh] px-4 text-center">
+                <pre id="ascii-title" class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-['IBM_Plex_Mono'] leading-tight whitespace-pre text-white"></pre>
             </div>
         </section>
 
         <!-- Event 1 Section -->
-        <section class="border-b border-white">
+        <section id="event-1" class="border-b border-white">
             <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[60vh]">
                 <!-- Event Info -->
                 <div class="col-span-1 lg:col-span-6 flex flex-col justify-center px-6 lg:pl-6 lg:pr-12 lg:border-r border-white py-8 lg:py-0">
@@ -197,7 +193,7 @@
                         loop 
                         playsinline
                     >
-                        <source src="https://uwhhlxrvyktbohhgwblr.supabase.co/storage/v1/object/sign/celsius-assets/video_gistel_no_borders_720p.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNWYwNzRiOS1kNjZhLTQ5ZjctODlmZi1mNTYyZjM2Yjc5YWIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZWxzaXVzLWFzc2V0cy92aWRlb19naXN0ZWxfbm9fYm9yZGVyc183MjBwLm1wNCIsImlhdCI6MTc1OTY3Nzc0MSwiZXhwIjoxNzkxMjEzNzQxfQ.IlbKJAUDNOIjeLKHnF1-t50J-5DYgRGiOd_9ffZJ68k" type="video/mp4">
+                        <source src="https://uwhhlxrvyktbohhgwblr.supabase.co/storage/v1/object/sign/celsius-assets/video_gistel_no_borders_720p.mp4?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNWYwNzRiOS1kNjZhLTQ5ZjctODlmZi1mNTYyZjM2Yjc5YWIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZWxzaXVzLWFzc2V0cy92aWRlb19naXN0ZWxfbm9fYm9yZGVyc183MjBwLm1wNCIsImlhdCI6MTc1OTczNDM4MSwiZXhwIjoxNzkxMjcwMzgxfQ.QHPC_JPLa2_IMNTkxl3WtdutQj51R7tlZYzyhf-pwmQ" type="video/mp4">
                     </video>
                 </div>
             </div>
@@ -228,14 +224,17 @@
                     </div>
                 </div>
                 
-                <!-- Placeholder for Event 3 -->
-                <div class="col-span-1 lg:col-span-6 flex items-center justify-center bg-gray-900 min-h-[40vh] lg:min-h-full">
-                    <div class="text-center">
-                        <div class="text-2xl md:text-3xl lg:text-4xl font-black uppercase text-white opacity-50">TBA</div>
-                        <div class="text-sm md:text-base lg:text-lg font-['IBM_Plex_Mono'] uppercase tracking-wider text-white opacity-30 mt-4">
-                            TO BE ANNOUNCED
-                        </div>
-                    </div>
+                 <!-- Event Video -->
+                 <div class="col-span-1 lg:col-span-6 flex items-center justify-center min-h-[40vh] lg:min-h-full">
+                    <video 
+                        class="w-full h-full object-cover" 
+                        autoplay 
+                        muted 
+                        loop 
+                        playsinline
+                    >
+                        <source src="" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </section>
@@ -256,11 +255,11 @@
 
             <!-- Right: Social Links -->
             <div class="flex items-center justify-center lg:justify-end px-6 py-4 lg:py-0 lg:col-span-4 space-x-4">
-                <a href="https://www.instagram.com/celsiuscult/" target="_blank" class="opacity-70 hover:opacity-100">INSTAGRAM</a>
+                <a href="https://instagram.com/celsius.events" target="_blank" class="opacity-70 hover:opacity-100">INSTAGRAM</a>
                 <span>/</span>
-                <a href="https://www.tiktok.com/@celsiuscult" target="_blank" class="opacity-70 hover:opacity-100">TIKTOK</a>
+                <a href="https://tiktok.com/@celsius.events" target="_blank" class="opacity-70 hover:opacity-100">TIKTOK</a>
                 <span>/</span>
-                <a href="mailto:info@celsiuscult.com" class="opacity-70 hover:opacity-100">EMAIL</a>
+                <a href="mailto:info@celsius.events" class="opacity-70 hover:opacity-100">EMAIL</a>
             </div>
         </div>
     </footer>
@@ -292,6 +291,26 @@
                 mobileMenu.classList.add('hidden');
                 mobileMenu.classList.remove('flex');
             });
+        });
+    </script>
+    
+    <!-- ASCII Art Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const asciiElement = document.getElementById('ascii-title');
+            if (!asciiElement) return;
+
+            // Simple ASCII art for "UPCOMING"
+            const asciiText = `
+██╗   ██╗██████╗  ██████╗ ██████╗ ███╗   ███╗██╗███╗   ██╗ ██████╗ 
+██║   ██║██╔══██╗██╔════╝██╔═══██╗████╗ ████║██║████╗  ██║██╔════╝ 
+██║   ██║██████╔╝██║     ██║   ██║██╔████╔██║██║██╔██╗ ██║██║  ███╗
+██║   ██║██╔═══╝ ██║     ██║   ██║██║╚██╔╝██║██║██║╚██╗██║██║   ██║
+╚██████╔╝██║     ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║██║ ╚████║╚██████╔╝
+ ╚═════╝ ╚═╝      ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
+      `;
+
+            asciiElement.textContent = asciiText;
         });
     </script>
 </body>

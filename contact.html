@@ -54,9 +54,9 @@
     </div>
 
     <!-- Marquee -->
-    <div class="fixed top-16 left-0 right-0 z-40 bg-black border-b border-white overflow-hidden">
+    <div id="marquee-bar" class="fixed top-16 left-0 right-0 z-[60] bg-black border-t border-b border-white overflow-hidden transition-all duration-300 cursor-pointer" onclick="window.location.href='events.html'" onmouseover="this.style.backgroundColor='white'; this.querySelector('.marquee-text').style.color='black';" onmouseout="this.style.backgroundColor='black'; this.querySelector('.marquee-text').style.color='white';">
         <div class="marquee-container">
-            <div class="marquee-text text-xs font-['IBM_Plex_Mono'] uppercase tracking-[0.3em] whitespace-nowrap">
+            <div class="marquee-text text-xs font-['IBM_Plex_Mono'] uppercase tracking-[0.3em] whitespace-nowrap text-white">
                 CELSIUS 01 / BAR BROOS / OUDE-BEESTENMARKT / GHENT / 10.10.2025 / 23:00-05:00 / FREE ENTRY / BUMI / ILKE B2B MAXIM / MOES / CELSIUS 01 / BAR BROOS / OUDE-BEESTENMARKT / GHENT / 10.10.2025 / 23:00-05:00 / FREE ENTRY / BUMI / ILKE B2B MAXIM / MOES /
             </div>
         </div>

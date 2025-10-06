@@ -123,17 +123,27 @@ footer * {
 .marquee-container {
     overflow: hidden;
     white-space: nowrap;
+    width: 100%;
 }
 
 .marquee-text {
     display: inline-block;
-    animation: marquee 20s linear infinite;
+    animation: marquee 45s linear infinite;
     padding: 12px 0;
+}
+
+/* Marquee hover effect - specific to marquee only */
+#marquee-bar:hover {
+    background-color: white !important;
+}
+
+#marquee-bar:hover .marquee-text {
+    color: black !important;
 }
 
 @keyframes marquee {
     0% {
-        transform: translateX(100%);
+        transform: translateX(100vw);
     }
     100% {
         transform: translateX(-100%);
@@ -178,7 +188,7 @@ footer * {
 @media (max-width: 1024px) {
     .marquee-text {
         font-size: 0.75rem;
-        animation-duration: 15s;
+        animation-duration: 35s;
     }
     
     /* Mobile grid adjustments */
@@ -223,7 +233,7 @@ footer * {
 @media (max-width: 768px) {
     .marquee-text {
         font-size: 0.7rem;
-        animation-duration: 12s;
+        animation-duration: 30s;
     }
     
     /* Smaller mobile adjustments */
