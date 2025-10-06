@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team - Celsius</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-white font-['Space_Grotesk'] min-h-screen">
+    <!-- Header - Responsive Brutalist -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black border-b border-white">
+        <div class="flex items-center justify-between px-4 lg:px-6 h-16">
+            <!-- Logo Section -->
+            <div class="flex items-center">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="Celsius" class="h-8 lg:h-12 w-auto">
+                </a>
+            </div>
+            
+            <!-- Countdown Timer - Hidden on mobile -->
+            <div class="hidden lg:flex items-center justify-center flex-1">
+                <div class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-60 text-center" id="countdown">
+                    <div id="countdown-timer">LOADING...</div>
+                </div>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav id="desktop-nav" class="hidden lg:flex space-x-8">
+                <a href="events.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200">EVENTS</a>
+                <a href="about.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200">ABOUT</a>
+                <a href="team.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200 underline">TEAM</a>
+                <a href="contact.html" class="text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider hover:underline transition-all duration-200">CONTACT</a>
+            </nav>
+            
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="lg:hidden flex flex-col space-y-1.5 p-2">
+                <span class="block w-6 h-0.5 bg-white"></span>
+                <span class="block w-6 h-0.5 bg-white"></span>
+                <span class="block w-6 h-0.5 bg-white"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black flex-col items-center justify-center space-y-8 text-2xl font-['IBM_Plex_Mono'] uppercase tracking-wider hidden z-40">
+        <a href="events.html" class="hover:underline transition-opacity duration-200">EVENTS</a>
+        <a href="about.html" class="hover:underline transition-opacity duration-200">ABOUT</a>
+        <a href="team.html" class="hover:underline transition-opacity duration-200">TEAM</a>
+        <a href="contact.html" class="hover:underline transition-opacity duration-200">CONTACT</a>
+        <button id="menu-close" class="absolute top-6 right-6 text-3xl font-light">×</button>
+    </div>
+
+    <!-- Marquee -->
+    <div id="marquee-bar" class="fixed top-16 left-0 right-0 z-[60] bg-black border-t border-b border-white overflow-hidden transition-all duration-300 cursor-pointer" onclick="window.location.href='events.html'" onmouseover="this.style.backgroundColor='white'; this.querySelector('.marquee-text').style.color='black';" onmouseout="this.style.backgroundColor='black'; this.querySelector('.marquee-text').style.color='white';">
+        <div class="marquee-container">
+            <div class="marquee-text text-xs font-['IBM_Plex_Mono'] uppercase tracking-[0.3em] whitespace-nowrap text-white">
+                CELSIUS 01 / BAR BROOS / OUDE-BEESTENMARKT / GHENT / 10.10.2025 / 23:00-05:00 / FREE ENTRY / BUMI / ILKE B2B MAXIM / MOES / CELSIUS 01 / BAR BROOS / OUDE-BEESTENMARKT / GHENT / 10.10.2025 / 23:00-05:00 / FREE ENTRY / BUMI / ILKE B2B MAXIM / MOES /
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content - Responsive Brutalist Editorial -->
+    <main class="pt-32">
+        <!-- Page Title Section -->
+        <section class="border-b border-white">
+            <div class="grid grid-cols-12 min-h-[30vh] lg:min-h-[40vh]">
+                <div class="col-span-12 flex items-center justify-center px-4">
+                    <h1 class="text-7xl md:text-9xl lg:text-[10rem] xl:text-[14rem] font-black uppercase tracking-[0.05em] leading-none text-center">
+                        TEAM
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Group Photo Hero Section - Desktop Only -->
+        <section class="border-b border-white hidden lg:block">
+            <div class="w-full min-h-[40vh] md:min-h-[50vh] lg:min-h-[60vh]">
+                <img src="https://uwhhlxrvyktbohhgwblr.supabase.co/storage/v1/object/sign/celsius-assets/group.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNWYwNzRiOS1kNjZhLTQ5ZjctODlmZi1mNTYyZjM2Yjc5YWIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZWxzaXVzLWFzc2V0cy9ncm91cC5qcGciLCJpYXQiOjE3NTk3NTcwMjQsImV4cCI6MTc5MTI5MzAyNH0.I0TvUatznQ2CExAQnpB8WJha1o76xCijeld76mtGVhc" alt="Celsius Team" class="w-full h-full object-cover object-center">
+            </div>
+        </section>
+
+        <!-- Willem Section -->
+        <section class="border-b border-white">
+            <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[60vh]">
+                <!-- Photo -->
+                <div class="col-span-1 lg:col-span-6 flex items-center justify-center min-h-[40vh] lg:min-h-full border-t lg:border-t-0 lg:border-r border-white relative group">
+                    <img src="https://uwhhlxrvyktbohhgwblr.supabase.co/storage/v1/object/sign/celsius-assets/willem.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNWYwNzRiOS1kNjZhLTQ5ZjctODlmZi1mNTYyZjM2Yjc5YWIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZWxzaXVzLWFzc2V0cy93aWxsZW0uanBnIiwiaWF0IjoxNzU5NzU2OTM1LCJleHAiOjE3OTEyOTI5MzV9.32pEA8W5AgSAph2gUztjeBZs79F528Jqo37qZfuS4CI" alt="Willem" class="w-full h-full object-cover">
+                    <!-- Desktop Hover Overlay -->
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-90 transition-all duration-300 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 lg:flex hidden">
+                        <h3 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black uppercase tracking-[0.02em] leading-none mb-8 text-center">
+                            WILLEM
+                        </h3>
+                        <div class="flex flex-col items-center space-y-3">
+                            <div class="flex space-x-6">
+                                <a href="https://www.instagram.com/willem" target="_blank" class="text-sm font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100 transition-opacity duration-200">INSTAGRAM</a>
+                                <a href="https://www.tiktok.com/@willem" target="_blank" class="text-sm font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100 transition-opacity duration-200">TIKTOK</a>
+                            </div>
+                            <a href="mailto:willem@celsiuscult.com" class="text-sm font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100 transition-opacity duration-200">EMAIL</a>
+                        </div>
+                    </div>
+                    <!-- Mobile Always Visible -->
+                    <div class="absolute bottom-4 left-4 right-4 bg-black bg-opacity-80 p-4 lg:hidden">
+                        <h3 class="text-2xl font-black uppercase tracking-[0.02em] leading-none mb-2">
+                            WILLEM
+                        </h3>
+                        <div class="space-y-1">
+                            <a href="https://www.instagram.com/willem" target="_blank" class="block text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100">INSTAGRAM</a>
+                            <a href="https://www.tiktok.com/@willem" target="_blank" class="block text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100">TIKTOK</a>
+                            <a href="mailto:willem@celsiuscult.com" class="block text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100">EMAIL</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Text Content -->
+                <div class="col-span-1 lg:col-span-6 flex flex-col justify-center px-6 lg:pl-6 lg:pr-12 py-8 lg:py-0">
+                    <div class="space-y-6 lg:space-y-8">
+                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-[0.02em] leading-none">
+                            FOUNDER & CURATOR
+                        </h2>
+                        <p class="text-base md:text-lg font-light leading-relaxed">
+                            Willem is the visionary behind Celsius, bringing years of experience in the underground techno scene. 
+                            His passion for curating unique experiences and connecting artists drives the creative direction of every event.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ko Section -->
+        <section class="border-b border-white">
+            <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[60vh]">
+                <!-- Photo -->
+                <div class="col-span-1 lg:col-span-6 flex items-center justify-center min-h-[40vh] lg:min-h-full border-t lg:border-t-0 lg:border-r border-white relative group">
+                    <img src="https://uwhhlxrvyktbohhgwblr.supabase.co/storage/v1/object/sign/celsius-assets/ko.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNWYwNzRiOS1kNjZhLTQ5ZjctODlmZi1mNTYyZjM2Yjc5YWIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZWxzaXVzLWFzc2V0cy9rby5qcGciLCJpYXQiOjE3NTk3NTY5NzksImV4cCI6MTc5MTI5Mjk3OX0.VDQFlRlMxg_Qu9F7bIu3ACPomiV1T7GxxULi-sh6oBI" alt="Ko" class="w-full h-full object-cover">
+                    <!-- Desktop Hover Overlay -->
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-90 transition-all duration-300 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 lg:flex hidden">
+                        <h3 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black uppercase tracking-[0.02em] leading-none mb-8 text-center">
+                            KO
+                        </h3>
+                        <div class="flex flex-col items-center space-y-3">
+                            <div class="flex space-x-6">
+                                <a href="https://www.instagram.com/ko" target="_blank" class="text-sm font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100 transition-opacity duration-200">INSTAGRAM</a>
+                                <a href="https://www.tiktok.com/@ko" target="_blank" class="text-sm font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100 transition-opacity duration-200">TIKTOK</a>
+                            </div>
+                            <a href="mailto:ko@celsiuscult.com" class="text-sm font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100 transition-opacity duration-200">EMAIL</a>
+                        </div>
+                    </div>
+                    <!-- Mobile Always Visible -->
+                    <div class="absolute bottom-4 left-4 right-4 bg-black bg-opacity-80 p-4 lg:hidden">
+                        <h3 class="text-2xl font-black uppercase tracking-[0.02em] leading-none mb-2">
+                            KO
+                        </h3>
+                        <div class="space-y-1">
+                            <a href="https://www.instagram.com/ko" target="_blank" class="block text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100">INSTAGRAM</a>
+                            <a href="https://www.tiktok.com/@ko" target="_blank" class="block text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100">TIKTOK</a>
+                            <a href="mailto:ko@celsiuscult.com" class="block text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100">EMAIL</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Text Content -->
+                <div class="col-span-1 lg:col-span-6 flex flex-col justify-center px-6 lg:pl-6 lg:pr-12 py-8 lg:py-0">
+                    <div class="space-y-6 lg:space-y-8">
+                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-[0.02em] leading-none">
+                            TECHNICAL DIRECTOR
+                        </h2>
+                        <p class="text-base md:text-lg font-light leading-relaxed">
+                            Ko handles all technical aspects of Celsius events, from sound engineering to visual installations. 
+                            His expertise ensures every event delivers the perfect audio-visual experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Maxim Section -->
+        <section class="border-b border-white">
+            <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[60vh]">
+                <!-- Photo -->
+                <div class="col-span-1 lg:col-span-6 flex items-center justify-center min-h-[40vh] lg:min-h-full border-t lg:border-t-0 lg:border-r border-white relative group">
+                    <img src="https://uwhhlxrvyktbohhgwblr.supabase.co/storage/v1/object/sign/celsius-assets/maxim.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNWYwNzRiOS1kNjZhLTQ5ZjctODlmZi1mNTYyZjM2Yjc5YWIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZWxzaXVzLWFzc2V0cy9tYXhpbS5qcGciLCJpYXQiOjE3NTk3NTcwNzMsImV4cCI6MTc5MTI5MzA3M30.XxR6Pk0X48BCwEfGQOIbvKTuBf9rmnzrlRrV0Uim4jA" alt="Maxim" class="w-full h-full object-cover">
+                    <!-- Desktop Hover Overlay -->
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-90 transition-all duration-300 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 lg:flex hidden">
+                        <h3 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black uppercase tracking-[0.02em] leading-none mb-8 text-center">
+                            MAXIM
+                        </h3>
+                        <div class="flex flex-col items-center space-y-3">
+                            <div class="flex space-x-6">
+                                <a href="https://www.instagram.com/maxim" target="_blank" class="text-sm font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100 transition-opacity duration-200">INSTAGRAM</a>
+                                <a href="https://www.tiktok.com/@maxim" target="_blank" class="text-sm font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100 transition-opacity duration-200">TIKTOK</a>
+                            </div>
+                            <a href="mailto:maxim@celsiuscult.com" class="text-sm font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100 transition-opacity duration-200">EMAIL</a>
+                        </div>
+                    </div>
+                    <!-- Mobile Always Visible -->
+                    <div class="absolute bottom-4 left-4 right-4 bg-black bg-opacity-80 p-4 lg:hidden">
+                        <h3 class="text-2xl font-black uppercase tracking-[0.02em] leading-none mb-2">
+                            MAXIM
+                        </h3>
+                        <div class="space-y-1">
+                            <a href="https://www.instagram.com/maxim" target="_blank" class="block text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100">INSTAGRAM</a>
+                            <a href="https://www.tiktok.com/@maxim" target="_blank" class="block text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100">TIKTOK</a>
+                            <a href="mailto:maxim@celsiuscult.com" class="block text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100">EMAIL</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Text Content -->
+                <div class="col-span-1 lg:col-span-6 flex flex-col justify-center px-6 lg:pl-6 lg:pr-12 py-8 lg:py-0">
+                    <div class="space-y-6 lg:space-y-8">
+                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-[0.02em] leading-none">
+                            ARTIST & DJ
+                        </h2>
+                        <p class="text-base md:text-lg font-light leading-relaxed">
+                            Maxim brings his unique sound and energy to the Celsius stage. As both an artist and DJ, 
+                            he contributes to the creative vision while delivering unforgettable performances.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ilke Section -->
+        <section class="border-b border-white">
+            <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[60vh]">
+                <!-- Photo -->
+                <div class="col-span-1 lg:col-span-6 flex items-center justify-center min-h-[40vh] lg:min-h-full border-t lg:border-t-0 lg:border-r border-white relative group">
+                    <img src="https://uwhhlxrvyktbohhgwblr.supabase.co/storage/v1/object/sign/celsius-assets/ilke.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNWYwNzRiOS1kNjZhLTQ5ZjctODlmZi1mNTYyZjM2Yjc5YWIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZWxzaXVzLWFzc2V0cy9pbGtlLmpwZyIsImlhdCI6MTc1OTc1NjM2NSwiZXhwIjoxNzkxMjkyMzY1fQ.btq1z0nlF9lbRXgs5-Cxioc7iTrCkadiWM31x_HzUMI" alt="Ilke" class="w-full h-full object-cover">
+                    <!-- Desktop Hover Overlay -->
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-90 transition-all duration-300 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 lg:flex hidden">
+                        <h3 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black uppercase tracking-[0.02em] leading-none mb-8 text-center">
+                            ILKE
+                        </h3>
+                        <div class="flex flex-col items-center space-y-3">
+                            <div class="flex space-x-6">
+                                <a href="https://www.instagram.com/ilke" target="_blank" class="text-sm font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100 transition-opacity duration-200">INSTAGRAM</a>
+                                <a href="https://www.tiktok.com/@ilke" target="_blank" class="text-sm font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100 transition-opacity duration-200">TIKTOK</a>
+                            </div>
+                            <a href="mailto:ilke@celsiuscult.com" class="text-sm font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100 transition-opacity duration-200">EMAIL</a>
+                        </div>
+                    </div>
+                    <!-- Mobile Always Visible -->
+                    <div class="absolute bottom-4 left-4 right-4 bg-black bg-opacity-80 p-4 lg:hidden">
+                        <h3 class="text-2xl font-black uppercase tracking-[0.02em] leading-none mb-2">
+                            ILKE
+                        </h3>
+                        <div class="space-y-1">
+                            <a href="https://www.instagram.com/ilke" target="_blank" class="block text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100">INSTAGRAM</a>
+                            <a href="https://www.tiktok.com/@ilke" target="_blank" class="block text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100">TIKTOK</a>
+                            <a href="mailto:ilke@celsiuscult.com" class="block text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider opacity-70 hover:opacity-100">EMAIL</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Text Content -->
+                <div class="col-span-1 lg:col-span-6 flex flex-col justify-center px-6 lg:pl-6 lg:pr-12 py-8 lg:py-0">
+                    <div class="space-y-6 lg:space-y-8">
+                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-[0.02em] leading-none">
+                            ARTIST & DJ
+                        </h2>
+                        <p class="text-base md:text-lg font-light leading-relaxed">
+                            Ilke is a key creative force behind Celsius, bringing innovative sounds and artistic vision. 
+                            Her performances and creative input help shape the unique identity of each event.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Group Photo Section - Mobile Only -->
+        <section class="lg:hidden m-0 p-0">
+            <div class="w-full m-0 p-0">
+                <img src="https://uwhhlxrvyktbohhgwblr.supabase.co/storage/v1/object/sign/celsius-assets/group.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9hNWYwNzRiOS1kNjZhLTQ5ZjctODlmZi1mNTYyZjM2Yjc5YWIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJjZWxzaXVzLWFzc2V0cy9ncm91cC5qcGciLCJpYXQiOjE3NTk3NTYzODEsImV4cCI6MTc5MTI5MjM4MX0.lB1-qZh7WS-j2mqwEW5epr-GXwmLaGJK3fE2LrPjlmo" alt="Celsius Team" class="w-full h-auto object-cover object-center m-0 p-0">
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer - Responsive Brutalist -->
+    <footer class="w-full border-t border-white bg-black fixed bottom-0 left-0 right-0 z-50">
+        <div class="flex flex-col lg:grid lg:grid-cols-12 h-auto lg:h-20 text-xs font-['IBM_Plex_Mono'] uppercase tracking-wider">
+            <!-- Left: Logo + Copyright -->
+            <div class="flex items-center justify-center lg:justify-start px-6 py-4 lg:py-0 lg:col-span-4 border-b lg:border-b-0 lg:border-r border-white">
+                <p class="opacity-60">© 2025 CELSIUS</p>
+            </div>
+
+            <!-- Center: Tagline -->
+            <div class="flex items-center justify-center px-6 py-4 lg:py-0 lg:col-span-4 border-b lg:border-b-0 lg:border-r border-white">
+                <p class="font-['IBM_Plex_Mono'] text-sm lg:text-base font-mono">heat.turned.up</p>
+            </div>
+
+            <!-- Right: Social Links -->
+            <div class="flex items-center justify-center lg:justify-end px-6 py-4 lg:py-0 lg:col-span-4 space-x-4">
+                <a href="https://www.instagram.com/celsiuscult/" target="_blank" class="opacity-70 hover:opacity-100">INSTAGRAM</a>
+                <span>/</span>
+                <a href="https://www.tiktok.com/@celsiuscult" target="_blank" class="opacity-70 hover:opacity-100">TIKTOK</a>
+                <span>/</span>
+                <a href="mailto:info@celsiuscult.com" class="opacity-70 hover:opacity-100">EMAIL</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+    
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuClose = document.getElementById('menu-close');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
+
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+        });
+
+        // Close menu when clicking on links
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+    </script>
+</body>
+</html>
